@@ -1,12 +1,166 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>Jared's Unit Converter</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+body {
+  background-color: LightGray;
+}
+
+h1 {
+  color: white;
+  text-align: center;;
+}
+
+h2 {
+  color: Navy;
+  text-align: center;
+  font-size: 20px;
+}
+.header {
+   background-image: url("http://byuinsider.com/wp-content/uploads/2015/09/Blue-Wallpaper-Wonderful-Version-Photos-8075-iwp.jpg");
+      background-size: 100% 100%;
+  background-color: gray;
+  font-size:  30px;
+  padding:  10px;
+  text-align: center;
+}
+  </style>
+  <script>
+    function LengthConverter(valNum,inunit,outunit) {
+      if (inunit == "inches" && outunit=="feet") {
+        document.getElementById("convertedOutput").innerHTML= valNum/12;
+      } else if (inunit == "inches" && outunit=="yards") {
+        document.getElementById("convertedOutput").innerHTML=valNum/36;        
+      } else if (inunit == "inches" && outunit=="miles") {
+        document.getElementById("convertedOutput").innerHTML=valNum/63360;        
+      } else if (inunit == "inches" && outunit=="inches") {
+        document.getElementById("convertedOutput").innerHTML=valNum;        
+      } else if (inunit == "inches" && outunit=="meters") {
+        document.getElementById("convertedOutput").innerHTML=valNum/39.3701;        
+      } else if (inunit == "inches" && outunit=="kilometers") {
+        document.getElementById("convertedOutput").innerHTML=valNum/39370.1;        
+      }
+      
+      if (inunit == "feet" && outunit=="feet") { 
+        document.getElementById("convertedOutput").innerHTML=valNum;
+      } else if (inunit == "feet" && outunit=="yards") {
+        document.getElementById("convertedOutput").innerHTML=valNum/3;        
+      } else if (inunit == "feet" && outunit=="miles") {
+        document.getElementById("convertedOutput").innerHTML=valNum/5280;        
+      } else if (inunit == "feet" && outunit=="inches") {
+        document.getElementById("convertedOutput").innerHTML=valNum*12;        
+      } else if (inunit == "feet" && outunit=="meters") {
+        document.getElementById("convertedOutput").innerHTML=valNum/3.28084;        
+      } else if (inunit == "feet" && outunit=="kilometers") {
+        document.getElementById("convertedOutput").innerHTML=valNum/3280.84;        
+      }
+      
+      if (inunit == "yards" && outunit=="feet") { 
+        document.getElementById("convertedOutput").innerHTML=valNum*3;
+      } else if (inunit == "yards" && outunit=="yards") {
+        document.getElementById("convertedOutput").innerHTML=valNum;        
+      } else if (inunit == "yards" && outunit=="miles") {
+        document.getElementById("convertedOutput").innerHTML=valNum/1760;        
+      } else if (inunit == "yards" && outunit=="inches") {
+        document.getElementById("convertedOutput").innerHTML=valNum*36;        
+      } else if (inunit == "yards" && outunit=="meters") {
+        document.getElementById("convertedOutput").innerHTML=valNum/1.09361;        
+      } else if (inunit == "yards" && outunit=="kilometers") {
+        document.getElementById("convertedOutput").innerHTML=valNum/1093.61;        
+      } 
+      if (inunit == "miles" && outunit=="feet") { 
+        document.getElementById("convertedOutput").innerHTML=valNum*5280;
+      } else if (inunit == "miles" && outunit=="yards") {
+        document.getElementById("convertedOutput").innerHTML=valNum*1760;        
+      } else if (inunit == "miles" && outunit=="miles") {
+        document.getElementById("convertedOutput").innerHTML=valNum;        
+      } else if (inunit == "miles" && outunit=="inches") {
+        document.getElementById("convertedOutput").innerHTML=valNum*63360;        
+      } else if (inunit == "miles" && outunit=="meters") {
+        document.getElementById("convertedOutput").innerHTML=valNum*1609.34;        
+      } else if (inunit == "miles" && outunit=="kilometers") {
+        document.getElementById("convertedOutput").innerHTML=valNum*1.60934;        
+      }
+      
+      if (inunit == "meters" && outunit=="feet") { 
+        document.getElementById("convertedOutput").innerHTML=valNum*3.28084;
+      } else if (inunit == "meters" && outunit=="yards") {
+        document.getElementById("convertedOutput").innerHTML=valNum*1.09361;        
+      } else if (inunit == "meters" && outunit=="miles") {
+        document.getElementById("convertedOutput").innerHTML=valNum/1609.34;        
+      } else if (inunit == "meters" && outunit=="inches") {
+        document.getElementById("convertedOutput").innerHTML=valNum*39.3701;        
+      } else if (inunit == "meters" && outunit=="meters") {
+        document.getElementById("convertedOutput").innerHTML=valNum;        
+      } else if (inunit == "meters" && outunit=="kilometers") {
+        document.getElementById("convertedOutput").innerHTML=valNum/1000;        
+      } 
+      
+      if (inunit == "kilometers" && outunit=="feet") { 
+        document.getElementById("convertedOutput").innerHTML=valNum*3280.84;
+      } else if (inunit == "kilometers" && outunit=="yards") {
+        document.getElementById("convertedOutput").innerHTML=valNum*1093.61;        
+      } else if (inunit == "kilometers" && outunit=="miles") {
+        document.getElementById("convertedOutput").innerHTML=valNum/1.60934;        
+      } else if (inunit == "kilometers" && outunit=="inches") {
+        document.getElementById("convertedOutput").innerHTML=valNum*39370.1;        
+      } else if (inunit == "kilometers" && outunit=="meters") {
+        document.getElementById("convertedOutput").innerHTML=valNum*1000;        
+      } else if (inunit == "kilometers" && outunit=="kilometers") {
+        document.getElementById("convertedOutput").innerHTML=valNum;        
+      }
+  
+}
+  </script>
 </head>
 <body>
+<!-- Start your code here -->
+<div class="header">
+  <h1> Unit Converter</h1>
+</div>
+  <h2>By Jared Lillywhite... I promise</h2>
+  <p align="center"> Enter a value to be converted: <input type="number" id ="numval"> </p>
+  <p align="center">
+  <table style=""width:100%>
+    <tr>
+      <td><form action="/action_page.php">
+        <label for="input"> Input Units:</label>
+      <select id="input_units">
+        <option value="inches">Inches</option>
+        <option value="feet">Feet</option>
+        <option value="yards">Yards</option>
+        <option value="miles">Miles</option>
+        <option value="meters">Meters</option>
+        <option value="kilometers">Kilometers</option>
+        </select></form>
+        </td>
+      <td></td>
+      <td>
+    <form action="/action_page.php">
+      <label for="input">Output Units:</label>
+      <select id="output_units">
+        <option value="inches">Inches</option>
+        <option value="feet">Feet</option>
+        <option value="yards">Yards</option>
+        <option value="miles">Miles</option>
+        <option value="meters">Meters</option>
+        <option value="kilometers">Kilometers</option>
+      </select>
+    </form>        
+      </td>
+    </tr></table>
+    </p>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+  <p align="center">
+  <button type="button" onclick="LengthConverter(numval.value, input_units.value, output_units.value)">Convert</button>
+  </p>
+  
+  <p align="center">Result: <span type="number" id="convertedOutput"></span></p>
+  
 
+<!-- End your code here -->
 </body>
 </html>
