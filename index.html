@@ -96,15 +96,35 @@
     .faq-list summary::after{content:"+";float:right;color:var(--copper-deep)}
     .faq-list details[open] summary::after{content:"\2013"}
     .faq-list details p{margin:14px 0 4px;color:var(--muted);max-width:660px;line-height:1.6}
+    .site-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,27,39,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .site-nav-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px 24px}
+    .wordmark{font-family:"Libre Caslon Display",serif;font-size:1.2rem;letter-spacing:.02em;color:#f7f2e8;text-decoration:none}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a.nav-link{color:#d9e2e7;text-decoration:none;font-size:.93rem;letter-spacing:.03em}
+    .nav-links a.nav-link:hover{color:var(--copper-deep)}
+    .nav-cta{display:inline-block;background:var(--copper);color:#fff;text-decoration:none;font-weight:600;font-size:.93rem;padding:9px 22px;border-radius:999px}
+    .nav-cta:hover{background:var(--copper-deep)}
+    main section{scroll-margin-top:72px}
     @media(max-width:800px){
       .hero{grid-template-columns:1fr;min-height:auto}.hero-copy{min-height:66svh;padding:72px 24px 55px}.hero-art{height:47svh;min-height:330px}.hero-art:after{background:linear-gradient(180deg,var(--navy) 0%,transparent 25%)}.hero-note{display:none}
-      .intro,.section-head{grid-template-columns:1fr;gap:24px}.service{grid-template-columns:48px 1fr;gap:12px 18px}.service p{grid-column:2}.work-head{display:block}.work-head p{margin-top:16px}.videos{grid-template-columns:1fr}.rep-grid{grid-template-columns:1fr}.rating-row{align-items:flex-start;flex-direction:column}.quotes{grid-template-columns:1fr}blockquote{min-height:0}.contact-inner{grid-template-columns:1fr}.site-footer div{display:block}.site-footer span{display:block;margin-top:5px}
+      .intro,.section-head{grid-template-columns:1fr;gap:24px}.service{grid-template-columns:48px 1fr;gap:12px 18px}.service p{grid-column:2}.work-head{display:block}.work-head p{margin-top:16px}.videos{grid-template-columns:1fr}.rep-grid{grid-template-columns:1fr}.rating-row{align-items:flex-start;flex-direction:column}.quotes{grid-template-columns:1fr}blockquote{min-height:0}.contact-inner{grid-template-columns:1fr}.nav-links{gap:0}.nav-links a.nav-link{display:none}.site-nav-inner{padding:11px 24px}.site-footer div{display:block}.site-footer span{display:block;margin-top:5px}
     }
     @media(max-width:420px){h1{font-size:3.3rem}.hero-copy{padding-top:56px}.button{width:100%}.service{grid-template-columns:36px 1fr}.video-meta{padding:15px}.contact-links a{align-items:flex-start;flex-direction:column}.contact-links a span:last-child{font-size:.82rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
   </style>
 </head>
 <body>
+  <header class="site-nav">
+    <div class="site-nav-inner">
+      <a class="wordmark" href="#">Jared Lillywhite</a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a class="nav-link" href="#listen">Listen</a>
+        <a class="nav-link" href="#services">Events</a>
+        <a class="nav-link" href="#reviews">Reviews</a>
+        <a class="nav-cta" href="#contact">Inquire</a>
+      </nav>
+    </div>
+  </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
@@ -151,7 +171,7 @@
     </section>
 
 
-    <section class="services" aria-labelledby="services-title">
+    <section class="services" id="services" aria-labelledby="services-title">
       <div class="section-head">
         <p class="section-label">Ways to work together</p>
         <h2 id="services-title">The right sound for your event.</h2>
@@ -180,7 +200,7 @@
       <p class="rep-note">Have a specific song in mind? I take requests and regularly learn new pieces for events — just ask when you reach out.</p>
     </section>
 
-    <section class="reviews" aria-labelledby="reviews-title">
+    <section class="reviews" id="reviews" aria-labelledby="reviews-title">
       <div class="reviews-inner">
         <p class="section-label">Client reviews</p>
         <h2 id="reviews-title">Prepared. Professional. Memorable.</h2>
